@@ -1,0 +1,63 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+/bin/Debug/*.pdb
+/CMakeFiles/3.22.0-rc1/CMakeCCompiler.cmake
+/CMakeFiles/3.22.0-rc1/CMakeCXXCompiler.cmake
+/CMakeFiles/3.22.0-rc1/CMakeDetermineCompilerABI_C.bin
+/CMakeFiles/3.22.0-rc1/CMakeDetermineCompilerABI_CXX.bin
+/CMakeFiles/3.22.0-rc1/CMakeRCCompiler.cmake
+/CMakeFiles/3.22.0-rc1/CMakeSystem.cmake
+/CMakeFiles/3.22.0-rc1/CompilerIdC/CMakeCCompilerId.c
+/CMakeFiles/3.22.0-rc1/CompilerIdC
+/CMakeFiles/3.22.0-rc1/CompilerIdCXX
+/CMakeFiles/3.22.0-rc1
+/CMakeFiles/CMakeOutput.log
+/CMakeFiles/TargetDirectories.txt
+/CMakeFiles/cmake.check_cache
+/CMakeFiles/ddd3a797025f0a256d804035f794c549/generate.stamp.rule
+/CMakeFiles/generate.stamp
+/CMakeFiles/generate.stamp.depend
+/CMakeFiles/generate.stamp.list
+/stonks.dir/Debug
+/x64/Debug/ZERO_CHECK
+/.vs/stonks/v16
+/include/*.bak
+/x64/Release/ZERO_CHECK
+/stonks.dir/Release
+/src/*.bak
+/backup
+/CMakeCache.txt
+/stock-market
+/stonks
+/scripts/*.bak
+/CMakeFiles/dca2b6d31123e37c1e95924928d0ea8b/generate.stamp.rule

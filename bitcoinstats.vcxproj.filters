@@ -1,0 +1,324 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\builder.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\c.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\db_impl.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\db_iter.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\dbformat.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\dumpfile.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\filename.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\log_reader.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\log_writer.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\memtable.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\repair.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\table_cache.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\version_edit.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\version_set.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\write_batch.cc">
+      <Filter>src\leveldb\db</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\table\block.cc">
+      <Filter>src\leveldb\table</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\table\block_builder.cc">
+      <Filter>src\leveldb\table</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\table\filter_block.cc">
+      <Filter>src\leveldb\table</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\table\format.cc">
+      <Filter>src\leveldb\table</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\table\iterator.cc">
+      <Filter>src\leveldb\table</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\table\merger.cc">
+      <Filter>src\leveldb\table</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\table\table.cc">
+      <Filter>src\leveldb\table</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\table\table_builder.cc">
+      <Filter>src\leveldb\table</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\table\two_level_iterator.cc">
+      <Filter>src\leveldb\table</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\arena.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\bloom.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\cache.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\coding.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\comparator.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\crc32c.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\env.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\env_windows.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\filter_policy.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\hash.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\logging.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\options.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\status.cc">
+      <Filter>src\leveldb\util</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\snappy\snappy-c.cc">
+      <Filter>src\snappy</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\snappy\snappy-sinksource.cc">
+      <Filter>src\snappy</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\snappy\snappy.cc">
+      <Filter>src\snappy</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\app\main.cpp">
+      <Filter>app</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\c.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\cache.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\comparator.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\db.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\dumpfile.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\env.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\export.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\filter_policy.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\iterator.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\options.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\slice.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\status.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\table.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\table_builder.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\leveldb\write_batch.h">
+      <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\builder.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\db_impl.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\db_iter.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\dbformat.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\filename.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\log_format.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\log_reader.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\log_writer.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\memtable.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\skiplist.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\snapshot.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\table_cache.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\version_edit.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\version_set.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\write_batch_internal.h">
+      <Filter>src\leveldb\db</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\port\port.h">
+      <Filter>src\leveldb\port</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\port\port_stdcxx.h">
+      <Filter>src\leveldb\port</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\port\thread_annotations.h">
+      <Filter>src\leveldb\port</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\table\block.h">
+      <Filter>src\leveldb\table</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\table\block_builder.h">
+      <Filter>src\leveldb\table</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\table\filter_block.h">
+      <Filter>src\leveldb\table</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\table\format.h">
+      <Filter>src\leveldb\table</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\table\iterator_wrapper.h">
+      <Filter>src\leveldb\table</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\table\merger.h">
+      <Filter>src\leveldb\table</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\table\two_level_iterator.h">
+      <Filter>src\leveldb\table</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\arena.h">
+      <Filter>src\leveldb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\coding.h">
+      <Filter>src\leveldb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\crc32c.h">
+      <Filter>src\leveldb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\env_windows_test_helper.h">
+      <Filter>src\leveldb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\hash.h">
+      <Filter>src\leveldb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\logging.h">
+      <Filter>src\leveldb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\mutexlock.h">
+      <Filter>src\leveldb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\no_destructor.h">
+      <Filter>src\leveldb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\random.h">
+      <Filter>src\leveldb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\windows_logger.h">
+      <Filter>src\leveldb\util</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\snappy\config.h">
+      <Filter>src\snappy</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\snappy\snappy-internal.h">
+      <Filter>src\snappy</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\src\snappy\snappy-stubs-internal.h">
+      <Filter>src\snappy</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\github\bitcoinstats\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="app">
+      <UniqueIdentifier>{BADC5403-911B-3AFE-BB6A-8786DF7E4ECA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{C74438AC-9C29-36FE-9E51-D0F7012EFB4F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\leveldb">
+      <UniqueIdentifier>{8341EE75-C995-363B-95F0-BD1FF750AD19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{D54A0413-2F7B-3F1F-A665-DAE7F4DB13AF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\leveldb">
+      <UniqueIdentifier>{D78C2BA0-1DB0-3D24-AC4D-D6AA23EF260A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\leveldb\db">
+      <UniqueIdentifier>{6495DD2B-FCAD-3D3E-B5AC-AC67475F60A1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\leveldb\port">
+      <UniqueIdentifier>{8B08B60E-60D9-3916-9366-66B37D2B9D7F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\leveldb\table">
+      <UniqueIdentifier>{D061C1EB-DE8B-3174-8ED5-8DB565BA6F74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\leveldb\util">
+      <UniqueIdentifier>{981D344F-1404-330C-BD81-D58A90B65A33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\snappy">
+      <UniqueIdentifier>{148438DA-1E75-39BD-A04F-39AF6B89D4FA}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
