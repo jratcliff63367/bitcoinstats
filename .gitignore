@@ -61,3 +61,7 @@
 /stonks
 /scripts/*.bak
 /CMakeFiles/dca2b6d31123e37c1e95924928d0ea8b/generate.stamp.rule
+/.vs/bitcoinstats/v16
+/*.bak
+/bitcoinstats.dir/Debug
+/bitcoinstats.dir/Release

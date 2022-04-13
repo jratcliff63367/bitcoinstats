@@ -7,24 +7,8 @@ namespace commands
 
 enum class CommandType : uint32_t
 {
-	create,
-	remove,
-	_delete,
-	show,
-	account,
 	help,
 	bye,
-	tickers,
-	backup,
-	restore,
-	marketcap,
-	pe,
-	dividend,
-	filter,
-	sectors,
-	industry,
-	volatility,
-	simulate,
 	last
 };
 

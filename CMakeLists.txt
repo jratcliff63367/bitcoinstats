@@ -84,6 +84,8 @@ endif()
 
 file (GLOB_RECURSE leveldb_EXTERNAL_SOURCES
     RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
+    include/*.h
+    src/*.cpp
     include/leveldb/*.h
     include /snappy/*.h
     src/leveldb/util/*.h

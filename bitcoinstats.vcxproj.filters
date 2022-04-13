@@ -1,6 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="D:\github\bitcoinstats\src\Commands.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\InParser.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\InputLine.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\KeyValueDatabase.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\WakupThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\builder.cc">
       <Filter>src\leveldb\db</Filter>
     </ClCompile>
@@ -121,11 +136,38 @@
     <ClCompile Include="D:\github\bitcoinstats\src\snappy\snappy.cc">
       <Filter>src\snappy</Filter>
     </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\sutil.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\wplatform.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="D:\github\bitcoinstats\app\main.cpp">
       <Filter>app</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="D:\github\bitcoinstats\include\Commands.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\GetArgs.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\InParser.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\InputLine.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\KeyValueDatabase.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\StandardDeviation.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\WakeupThread.h">
+      <Filter>include</Filter>
+    </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\include\leveldb\c.h">
       <Filter>include\leveldb</Filter>
     </ClInclude>
@@ -170,6 +212,129 @@
     </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\include\leveldb\write_batch.h">
       <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rand.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\allocators.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\cursorstreamwrapper.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\document.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\encodedstream.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\encodings.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\error\en.h">
+      <Filter>include\rapidjson\error</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\error\error.h">
+      <Filter>include\rapidjson\error</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\filereadstream.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\filewritestream.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\fwd.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\biginteger.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\diyfp.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\dtoa.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\ieee754.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\itoa.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\meta.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\pow10.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\regex.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\stack.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\strfunc.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\strtod.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\internal\swap.h">
+      <Filter>include\rapidjson\internal</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\istreamwrapper.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\memorybuffer.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\memorystream.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\msinttypes\inttypes.h">
+      <Filter>include\rapidjson\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\msinttypes\stdint.h">
+      <Filter>include\rapidjson\msinttypes</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\ostreamwrapper.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\pointer.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\prettywriter.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\rapidjson.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\reader.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\schema.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\stream.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\stringbuffer.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\writer.h">
+      <Filter>include\rapidjson</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\snappy\snappy-stubs-public.h">
+      <Filter>include\snappy</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\snappy\snappy.h">
+      <Filter>include\snappy</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\sutil.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\wplatform.h">
+      <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\builder.h">
       <Filter>src\leveldb\db</Filter>
@@ -298,6 +463,21 @@
     </Filter>
     <Filter Include="include\leveldb">
       <UniqueIdentifier>{8341EE75-C995-363B-95F0-BD1FF750AD19}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\rapidjson">
+      <UniqueIdentifier>{3DA49B8B-07AD-3B8C-B1AB-0B0CA6F2DBDD}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\rapidjson\error">
+      <UniqueIdentifier>{200D267E-659B-305B-A9C3-F3F968F767D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\rapidjson\internal">
+      <UniqueIdentifier>{7E4C1CDA-1535-38D6-A49B-55F50D40B72B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\rapidjson\msinttypes">
+      <UniqueIdentifier>{02F428EE-2439-382E-9CA4-B87856337A14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\snappy">
+      <UniqueIdentifier>{CF92F3DA-9D52-3DF3-9B92-C29F78D0A638}</UniqueIdentifier>
     </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{D54A0413-2F7B-3F1F-A665-DAE7F4DB13AF}</UniqueIdentifier>
