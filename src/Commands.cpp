@@ -3,6 +3,7 @@
 #include "sutil.h"
 #include "StandardDeviation.h"
 #include "rand.h"
+#include "Blocks.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,6 +16,8 @@
 #include <unordered_map>
 
 #pragma warning(disable:4100)
+
+#define SAFE_RELEASE(x) if ( x ) { x->release(); x = nullptr; }
 
 namespace commands
 {
@@ -39,10 +42,13 @@ public:
 
 		printf("Enter a command. Type 'help' for help. Type 'bye' to exit.\n");
 
+		mBlocks = blocks::Blocks::create("d:\\bitcoin-data\\blocks\\index");
+
 	}
 
 	virtual ~CommandsImpl(void)
 	{
+		SAFE_RELEASE(mBlocks);
 	}
 
 	virtual bool processInput(const char *str) final
@@ -109,6 +115,7 @@ public:
 
 	bool			mExit{false};
 	CommandTypeMap mCommands;
+	blocks::Blocks	*mBlocks{nullptr};
 };
 
 Commands *Commands::create(void)

@@ -1,6 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
+    <ClCompile Include="D:\github\bitcoinstats\src\Base58.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\BitcoinAddress.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\BlockChain.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\CRC32.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="D:\github\bitcoinstats\src\Commands.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -13,7 +25,16 @@
     <ClCompile Include="D:\github\bitcoinstats\src\KeyValueDatabase.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\RIPEMD160.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\SHA256.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="D:\github\bitcoinstats\src\WakupThread.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\blocks.cpp">
       <Filter>src</Filter>
     </ClCompile>
     <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\builder.cc">
@@ -127,6 +148,9 @@
     <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\status.cc">
       <Filter>src\leveldb\util</Filter>
     </ClCompile>
+    <ClCompile Include="D:\github\bitcoinstats\src\logging.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="D:\github\bitcoinstats\src\snappy\snappy-c.cc">
       <Filter>src\snappy</Filter>
     </ClCompile>
@@ -147,10 +171,28 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="D:\github\bitcoinstats\include\Base58.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\BitcoinAddress.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\BlockChain.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\CRC32.h">
+      <Filter>include</Filter>
+    </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\include\Commands.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\FileInterface.h">
+      <Filter>include</Filter>
+    </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\include\GetArgs.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\HeapSort.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\include\InParser.h">
@@ -162,10 +204,19 @@
     <ClInclude Include="D:\github\bitcoinstats\include\KeyValueDatabase.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\RIPEMD160.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\SHA256.h">
+      <Filter>include</Filter>
+    </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\include\StandardDeviation.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\include\WakeupThread.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\blocks.h">
       <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\include\leveldb\c.h">
@@ -212,6 +263,9 @@
     </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\include\leveldb\write_batch.h">
       <Filter>include\leveldb</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\github\bitcoinstats\include\logging.h">
+      <Filter>include</Filter>
     </ClInclude>
     <ClInclude Include="D:\github\bitcoinstats\include\rand.h">
       <Filter>include</Filter>

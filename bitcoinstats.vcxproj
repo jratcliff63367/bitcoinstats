@@ -320,13 +320,22 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="D:\github\bitcoinstats\include\Base58.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\BitcoinAddress.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\BlockChain.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\CRC32.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\Commands.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\FileInterface.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\GetArgs.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\HeapSort.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\InParser.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\InputLine.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\KeyValueDatabase.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\RIPEMD160.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\SHA256.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\StandardDeviation.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\WakeupThread.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\blocks.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\leveldb\c.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\leveldb\cache.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\leveldb\comparator.h" />
@@ -342,6 +351,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\github\bitcoinstats\include\leveldb\table.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\leveldb\table_builder.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\leveldb\write_batch.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\logging.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\rand.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\allocators.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\rapidjson\cursorstreamwrapper.h" />
@@ -383,11 +393,18 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\github\bitcoinstats\include\snappy\snappy.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\sutil.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\wplatform.h" />
+    <ClCompile Include="D:\github\bitcoinstats\src\Base58.cpp" />
+    <ClCompile Include="D:\github\bitcoinstats\src\BitcoinAddress.cpp" />
+    <ClCompile Include="D:\github\bitcoinstats\src\BlockChain.cpp" />
+    <ClCompile Include="D:\github\bitcoinstats\src\CRC32.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\Commands.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\InParser.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\InputLine.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\KeyValueDatabase.cpp" />
+    <ClCompile Include="D:\github\bitcoinstats\src\RIPEMD160.cpp" />
+    <ClCompile Include="D:\github\bitcoinstats\src\SHA256.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\WakupThread.cpp" />
+    <ClCompile Include="D:\github\bitcoinstats\src\blocks.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\builder.cc" />
     <ClInclude Include="D:\github\bitcoinstats\src\leveldb\db\builder.h" />
     <ClCompile Include="D:\github\bitcoinstats\src\leveldb\db\c.cc" />
@@ -452,7 +469,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\filter_policy.cc" />
     <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\hash.cc" />
     <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\hash.h" />
-    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\logging.cc" />
+    <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\logging.cc">
+      <ObjectFileName>$(IntDir)/src/leveldb/util/logging.cc.obj</ObjectFileName>
+    </ClCompile>
     <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\logging.h" />
     <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\mutexlock.h" />
     <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\no_destructor.h" />
@@ -460,6 +479,9 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\random.h" />
     <ClCompile Include="D:\github\bitcoinstats\src\leveldb\util\status.cc" />
     <ClInclude Include="D:\github\bitcoinstats\src\leveldb\util\windows_logger.h" />
+    <ClCompile Include="D:\github\bitcoinstats\src\logging.cpp">
+      <ObjectFileName>$(IntDir)/src/logging.cpp.obj</ObjectFileName>
+    </ClCompile>
     <ClInclude Include="D:\github\bitcoinstats\src\snappy\config.h" />
     <ClCompile Include="D:\github\bitcoinstats\src\snappy\snappy-c.cc" />
     <ClInclude Include="D:\github\bitcoinstats\src\snappy\snappy-internal.h" />
