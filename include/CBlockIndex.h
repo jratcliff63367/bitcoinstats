@@ -66,6 +66,8 @@ public:
 	uint32_t	mBits{0};				// This is the representation of the target; the value which the hash of the block header must not exceed in order to min the next block
 	uint32_t	mNonce{0};				// This is a random number generated during the mining process
 
+	uint8_t		mBlockHash[32]{};		// Hash of this block (key value when scanning leveldb)
+
 	// This enumeration defines the possible states for the
 	// bitcoin block status field
 	enum BlockStatus: uint32_t 
@@ -111,7 +113,10 @@ public:
 
 
 	CBlockIndex(void) { }; // default constructor
-
+	CBlockIndex(const char *blockHash)
+	{
+		memcpy(mBlockHash,blockHash,sizeof(mBlockHash));
+	}
 	/**
 	* Parse the leveldb block data and decompress it into the struct values
 	* 
@@ -165,6 +170,7 @@ public:
 	// you can compare to the actual blocks you might find on a blockchain explorer
 	void printInfo(void) const
 	{
+		printf("BlockHash       : "); printHash(mBlockHash);
 		printf("VersionNumber   : %d\n", uint32_t(mVersionNumber));
 		printf("BlockHeight     : %d\n", uint32_t(mBlockHeight));
 		printf("BlockStatus     : %08X\n", uint32_t(mBlockStatus));

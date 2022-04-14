@@ -30,10 +30,8 @@ public:
 				ok = database->next(key,value);
 				if ( ok )
 				{
-					CBlockIndex cb;
+					CBlockIndex cb(key.c_str()+1);
 					const uint8_t *start = (const uint8_t *)value.c_str();
-					printf("BlockHash:%s\n", getHexReverse(key).c_str());
-					printf("CBlockIndexData:%s\n", getHex(value).c_str());
 					cb.readBlockIndex(start,value.size());
 					cb.printInfo();
 				}
