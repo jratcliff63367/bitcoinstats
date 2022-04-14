@@ -32,11 +32,10 @@ public:
 				{
 					CBlockIndex cb;
 					const uint8_t *start = (const uint8_t *)value.c_str();
-					const uint8_t *end = (const uint8_t *)cb.readBlockIndex(start);
+					printf("BlockHash:%s\n", getHexReverse(key).c_str());
+					printf("CBlockIndexData:%s\n", getHex(value).c_str());
+					cb.readBlockIndex(start,value.size());
 					cb.printInfo();
-					size_t diff = end-start;
-					size_t vsize = value.size();
-					assert( vsize == diff );
 				}
 			}
 			database->release();
@@ -83,7 +82,7 @@ public:
 		std::string ret;
 		size_t count = str.size();
 		size_t index = count-1;
-		for (size_t i=0; i<count; i++)
+		for (size_t i=0; i<(count-1); i++)
 		{
 			uint8_t c = uint8_t(str[index]);
 			char h1 = getHex(c>>4);

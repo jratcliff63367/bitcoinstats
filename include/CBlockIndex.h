@@ -4,6 +4,9 @@
 #include <string.h>
 #include <time.h>
 
+#include <vector>
+
+
 /**
 * This code snippet was written by John W. Ratcliff on April 14, 2022
 * The purpose of this code snippet is to document the format of the
@@ -46,6 +49,22 @@
 class CBlockIndex
 {
 public:
+	uint64_t	mVersionNumber{0};	// version number encoded in the block header (stored in leveldb as a varible length integer) 
+	uint64_t	mBlockHeight{0};	// Which block number this is (stored in leveldb as a varible length integer)
+	uint64_t	mBlockStatus{0};	// Some bit flags about the block header (stored in leveldb as a varible length integer)
+	uint64_t	mTransactionCount{0}; // Number of transactions in this block (stored in leveldb as a varible length integer)
+	uint64_t	mFileIndex{0};		// blk or rev block number (stored in leveldb as a varible length integer)
+	uint64_t	mFileOffset{0};		// The offset into this file where the block is located (stored in leveldb as a varible length integer)
+	uint64_t	mUndoOffset{0};		// Offset into the rev file for undo data (stored in leveldb as a varible length integer)
+	
+	// These fields are the 'block header' data. These are not stored as variable length integers and are parsed directly
+	// according to size of each value.
+	int32_t		mBlockVersion{0};		// Version number
+	uint8_t		mHashPrevious[32]{};	// The hash of the previous block
+	uint8_t		mHashMerkleRoot[32]{};	// The hash of the merkle root
+	uint32_t	mTime{0};				// The block timestamp in UNIX epoch time (time_t)
+	uint32_t	mBits{0};				// This is the representation of the target; the value which the hash of the block header must not exceed in order to min the next block
+	uint32_t	mNonce{0};				// This is a random number generated during the mining process
 
 	// This enumeration defines the possible states for the
 	// bitcoin block status field
@@ -100,25 +119,33 @@ public:
 	* 
 	* @return : Returns the pointer after this block has been parsed fully
 	*/
-	const void *readBlockIndex(const void *data) // initialize the fields using this block data
+	const void *readBlockIndex(const void *data,size_t expectedSize) // initialize the fields using this block data
 	{
-		data = readVarint(data,mVersionNumber);	// Read the version number from a variable length integer source
-		data = readVarint(data,mBlockHeight);	// Read the block height from a variable length integer source
-		data = readVarint(data,mBlockStatus);	// Read the block status bits from a variable length integer source
-		data = readVarint(data,mTransactionCount);	// Read the total number of transactions in this block from a variable length integer source
+		const uint8_t *start = (const uint8_t *)data;
+
+		// It is very important to note, that these values are *NOT* stored in the variable integer format used everywhere else
+		// in the bitcoin blockchain. Instead, they are stored in what is called 'varint 128' format, which is used by Google
+		// protobuf and other tools. It's all completely stupid I might add. There is absolutely no need to attempt to 'compress'
+		// this data. LevelDB has a built-in generic compression system which will remove entropy just as efficiently.
+		// Moreover, these data records are extremely tiny and storing them at full resolution would not take up any 
+		// appreciable extra disk space. Some of these engineering decisions are really 'over-engineering' decisions IMO.
+		data = readVarint128(data,mVersionNumber);	// Read the version number from a variable length integer source
+		data = readVarint128(data,mBlockHeight);	// Read the block height from a variable length integer source
+		data = readVarint128(data,mBlockStatus);	// Read the block status bits from a variable length integer source
+		data = readVarint128(data,mTransactionCount);	// Read the total number of transactions in this block from a variable length integer source
 		// According to documentation provided by Pieter Wuille if bit 8 or bit 16 is set, then we can expect to find a 
 		// variable length integer representing which block file this block is located in.
 		if ( mBlockStatus & BLOCK_HAVE_MASK)
 		{
-			data = readVarint(data,mFileIndex);
+			data = readVarint128(data,mFileIndex);
 		}
 		if ( mBlockStatus & BLOCK_HAVE_DATA ) // if bit 8 is set, then we will find an file offset location as a variable length integer next
 		{
-			data = readVarint(data,mFileOffset);
+			data = readVarint128(data,mFileOffset);
 		}
 		if ( mBlockStatus & BLOCK_HAVE_UNDO ) // if bit 16 is set, we can expect to find a variable length integer corresponding to the file offset location to access 'undo' data for the block
 		{
-			data = readVarint(data,mUndoOffset);
+			data = readVarint128(data,mUndoOffset);
 		}
 		const uint8_t *scan = (const uint8_t *)data;
 		mBlockVersion = *(int32_t *)scan; scan+=sizeof(int32_t); // read the version number
@@ -127,6 +154,9 @@ public:
 		mTime = *(uint32_t *)scan; scan+=sizeof(uint32_t); // read the time stamp for this block
 		mBits = *(uint32_t *)scan; scan+=sizeof(uint32_t); // read the bits field
 		mNonce = *(uint32_t *)scan; scan+=sizeof(uint32_t); // read the nonce for this block
+
+		size_t size = scan - start;
+		assert( size == expectedSize );
 
 		return scan;
 	}
@@ -167,58 +197,33 @@ public:
 		printf("%4d-%02d-%02d\n", gtm->tm_year + 1900, gtm->tm_mon + 1, gtm->tm_mday);
 	}
 
-	uint64_t	mVersionNumber{0};	// version number encoded in the block header (stored in leveldb as a varible length integer) SIOGN
-	uint64_t	mBlockHeight{0};	// Which block number this is (stored in leveldb as a varible length integer)
-	uint64_t	mBlockStatus{0};	// Some bit flags about the block header (stored in leveldb as a varible length integer)
-	uint64_t	mTransactionCount{0}; // Number of transactions in this block (stored in leveldb as a varible length integer)
-	uint64_t	mFileIndex{0};		// blk or rev block number (stored in leveldb as a varible length integer)
-	uint64_t	mFileOffset{0};		// The offset into this file where the block is located (stored in leveldb as a varible length integer)
-	uint64_t	mUndoOffset{0};		// Offset into the rev file for undo data (stored in leveldb as a varible length integer)
-	
-	// These fields are the 'block header' data. These are not stored as variable length integers and are parsed directly
-	// according to size of each value.
-	int32_t		mBlockVersion{0};		// Version number
-	uint8_t		mHashPrevious[32]{};	// The hash of the previous block
-	uint8_t		mHashMerkleRoot[32]{};	// The hash of the merkle root
-	uint32_t	mTime{0};				// The block timestamp in UNIX epoch time (time_t)
-	uint32_t	mBits{0};				// This is the representation of the target; the value which the hash of the block header must not exceed in order to min the next block
-	uint32_t	mNonce{0};				// This is a random number generated during the mining process
-
-
 
 	/**
-	* reads a variable length integer.expecting an unsigned value
-	* See the documentation from here:  https://en.bitcoin.it/wiki/Protocol_specification#Variable_length_integer
+	* reads a variable length integer using varint 128 format.
+	* See the documentation from here:https://hackernoon.com/encoding-base128-varints-explained-371j3uz8
+	* This is *NOT* the same variable integer encoding used by the rest of the bitcoin blockchain!
+	* This can be very confusing!
+	* varint 128 is a variable integer format used by Google protobus.
 	* 
 	* @param data : The pointer to the variable length integer
 	* @param value : A reference to a 64 bit integer to return the decompressed value
 	* 
 	* @return : Returns the address in memory immediately after reading the variable length integer
 	*/
-	inline const void *readVarint(const void *data,uint64_t &value)
+	inline const void *readVarint128(const void *data,uint64_t &value)
 	{
 		const uint8_t *ret = (const uint8_t *)data;	// Cast the void pointer to a single byte pointer
 
-		uint8_t v8 = *ret++;
-		if ( v8 <= 0xFC )
+		value = 0;
+		uint8_t byte = 0;
+		uint32_t shift = 0;
+		do
 		{
-			value = v8;
-		}
-		else if ( v8 == 0xFD )
-		{
-			value = *(uint16_t *)ret;
-			ret+=sizeof(uint16_t);
-		}
-		else if ( v8 == 0xFE )
-		{
-			value = *(uint32_t *)ret;
-			ret+=sizeof(uint32_t);
-		}
-		else
-		{
-			value = *(uint64_t *)ret;
-			ret+=sizeof(uint64_t);
-		}
+			byte = *ret++;
+			value|=uint64_t(byte)<<shift;
+			shift+=7;
+		} while ( byte & 0x80 );
+
 
 		return ret; // Return the new pointer location
 	}
