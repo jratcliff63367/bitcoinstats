@@ -4,9 +4,6 @@
 #include <string.h>
 #include <time.h>
 
-#include <vector>
-
-
 /**
 * This code snippet was written by John W. Ratcliff on April 14, 2022
 * The purpose of this code snippet is to document the format of the
@@ -117,6 +114,7 @@ public:
 	{
 		memcpy(mBlockHash,blockHash,sizeof(mBlockHash));
 	}
+
 	/**
 	* Parse the leveldb block data and decompress it into the struct values
 	* 
