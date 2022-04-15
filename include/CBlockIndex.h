@@ -12,6 +12,13 @@
 * All code needed to parse one of these custom headers is located here,
 * which includes the method to extract variable length integers.
 * 
+* *** IMPORTANT NOTE *** : The formatting of variable length integers by bitcoin core
+* when it writes to the levelDB is *NOT* the same variable length format used by 
+* the rest of the bitcoin blockchain. Moreover, the encoding is *NOT STANDARD*!
+* It appears to be some custom routine rolled just for the bitcoin source code.
+* So you mush take a look at the 'readVarint128' method closely to see how
+* these integers are decoded.
+* 
 * This is to serve as a more complete answer to the question previously
 * posted here: https://bitcoin.stackexchange.com/questions/67515/format-of-a-block-keys-contents-in-bitcoinds-leveldb
 * 
@@ -164,6 +171,39 @@ public:
 		return scan;
 	}
 
+	/**
+	* reads a variable length integer using a highly customized algorithm unique to the bitcoin core
+	* code base! This code matches the method called: ReadVarInt in 'serialize.h' in the bitcoin core source code.
+	* 
+	* @param data : The pointer to the variable length integer
+	* @param value : A reference to a 64 bit integer to return the decompressed value
+	* 
+	* @return : Returns the address in memory immediately after reading the variable length integer
+	*/
+	inline const void *readVarint128(const void *data,uint64_t &value)
+	{
+		const uint8_t *ret = (const uint8_t *)data;	// Cast the void pointer to a single byte pointer
+
+		value = 0;		// Set the return value to zero initially
+		uint8_t byte=0; // Each byte we are streaming in
+		do
+		{
+			byte = *ret++;	// Get the byte value and or the 7 lower bits into the result.
+			value = (value<<7) | uint64_t(byte&0x7F);
+			// If this is not the last byte, we increment the value we are accumulating by one.
+			// This is extremely non-standard and I could not find a reference to this technique
+			// anywhere online other than the bitcoin source code itself.
+
+			if ( byte & 0x80 )
+			{
+				value++;
+			}
+		} while ( byte & 0x80 );
+
+
+		return ret; // Return the new pointer location
+	}
+
 	// For debugging purposes, this method will print out the results of the block which
 	// you can compare to the actual blocks you might find on a blockchain explorer
 	void printInfo(void) const
@@ -202,35 +242,7 @@ public:
 	}
 
 
-	/**
-	* reads a variable length integer using varint 128 format.
-	* See the documentation from here:https://hackernoon.com/encoding-base128-varints-explained-371j3uz8
-	* This is *NOT* the same variable integer encoding used by the rest of the bitcoin blockchain!
-	* This can be very confusing!
-	* varint 128 is a variable integer format used by Google protobus.
-	* 
-	* @param data : The pointer to the variable length integer
-	* @param value : A reference to a 64 bit integer to return the decompressed value
-	* 
-	* @return : Returns the address in memory immediately after reading the variable length integer
-	*/
-	inline const void *readVarint128(const void *data,uint64_t &value)
-	{
-		const uint8_t *ret = (const uint8_t *)data;	// Cast the void pointer to a single byte pointer
 
-		value = 0;
-		uint8_t byte = 0;
-		uint32_t shift = 0;
-		do
-		{
-			byte = *ret++;
-			value|=uint64_t(byte)<<shift;
-			shift+=7;
-		} while ( byte & 0x80 );
-
-
-		return ret; // Return the new pointer location
-	}
 
 
 
