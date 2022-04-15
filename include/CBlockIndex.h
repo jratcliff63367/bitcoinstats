@@ -56,11 +56,11 @@ class CBlockIndex
 public:
 	uint64_t	mVersionNumber{0};	// version number encoded in the block header (stored in leveldb as a varible length integer) 
 	uint64_t	mBlockHeight{0};	// Which block number this is (stored in leveldb as a varible length integer)
-	uint64_t	mBlockStatus{0};	// Some bit flags about the block header (stored in leveldb as a varible length integer)
-	uint64_t	mTransactionCount{0}; // Number of transactions in this block (stored in leveldb as a varible length integer)
-	uint64_t	mFileIndex{0};		// blk or rev block number (stored in leveldb as a varible length integer)
-	uint64_t	mFileOffset{0};		// The offset into this file where the block is located (stored in leveldb as a varible length integer)
-	uint64_t	mUndoOffset{0};		// Offset into the rev file for undo data (stored in leveldb as a varible length integer)
+	uint64_t	mBlockStatus{0};	// Some bit flags about the block header (stored in leveldb as a variable length integer)
+	uint64_t	mTransactionCount{0}; // Number of transactions in this block (stored in leveldb as a variable length integer)
+	uint64_t	mFileIndex{0};		// blk or rev block number (stored in leveldb as a variable length integer)
+	uint64_t	mFileOffset{0};		// The offset into this file where the block is located (stored in leveldb as a variable length integer)
+	uint64_t	mUndoOffset{0};		// Offset into the rev file for undo data (stored in leveldb as a variable length integer)
 	
 	// These fields are the 'block header' data. These are not stored as variable length integers and are parsed directly
 	// according to size of each value.
