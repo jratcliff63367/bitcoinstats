@@ -20,6 +20,17 @@
 * So you must take a look at the 'readVarint128' method closely to see how
 * these integers are decoded.
 * 
+* In general developers of bitcoin core consider this data to be specific to
+* the bitcoin core code base; meaning they did not really expect independent
+* parties to be reading it directly. That said, reading these block headers
+* can *dramatically* speed up parsing the bitcoin blockchain. For people like
+* myself who are interested primarily in data-mining the bitcoin blockchain
+* this is extremely useful. The expected pattern is that you would read all
+* of the bitcoin block index headers from LevelDB first, and then you would
+* be able to directly seek to the correct file and offset locations to read 
+* and parse that particular bitcoin block. Or, well, at least that is what
+* I am intending on doing with it.
+* 
 * This is to serve as a more complete answer to the question previously
 * posted here: https://bitcoin.stackexchange.com/questions/67515/format-of-a-block-keys-contents-in-bitcoinds-leveldb
 * 
