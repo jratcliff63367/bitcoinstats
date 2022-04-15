@@ -118,6 +118,10 @@ public:
 
 
 	CBlockIndex(void) { }; // default constructor
+
+	// Optionally construct the class with the blockchash, which is found as the 'key' 
+	// field in the levelDB databse. Important to note, this 'key' has a prefix of the letter 'b'
+	// that you must skip past. It simply copies the blockhash provided into the data structure.
 	CBlockIndex(const char *blockHash)
 	{
 		memcpy(mBlockHash,blockHash,sizeof(mBlockHash));
@@ -135,9 +139,9 @@ public:
 		const uint8_t *start = (const uint8_t *)data;
 
 		// It is very important to note, that these values are *NOT* stored in the variable integer format used everywhere else
-		// in the bitcoin blockchain. Instead, they are stored in what is called 'varint 128' format, which is used by Google
-		// protobuf and other tools. It's all completely stupid I might add. There is absolutely no need to attempt to 'compress'
-		// this data. LevelDB has a built-in generic compression system which will remove entropy just as efficiently.
+		// in the bitcoin blockchain. Instead, they are stored in a highly customized bitcoin core specific encoding.
+		// I should add that there is absolutely no need to attempt to 'compress' this data!
+		// LevelDB has a built-in generic compression system which will remove entropy just as efficiently.
 		// Moreover, these data records are extremely tiny and storing them at full resolution would not take up any 
 		// appreciable extra disk space. Some of these engineering decisions are really 'over-engineering' decisions IMO.
 		data = readVarint128(data,mVersionNumber);	// Read the version number from a variable length integer source
