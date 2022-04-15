@@ -5,6 +5,11 @@
 #include <stdlib.h>
 #include <time.h>
 
+#ifdef _MSC_VER
+#pragma warning(push)
+#pragma warning(disable:4100 4189) // disable these nag warnings on Visual Studio
+#endif
+
 /**
 * This code snippet was written by John W. Ratcliff on April 14, 2022
 * The purpose of this code snippet is to document the format of the
@@ -256,10 +261,8 @@ public:
 		struct tm *gtm = gmtime(&t);
 		printf("%4d-%02d-%02d\n", gtm->tm_year + 1900, gtm->tm_mon + 1, gtm->tm_mday);
 	}
-
-
-
-
-
-
 };
+
+#ifdef _MSC_VER
+#pragma warning(pop)
+#endif
