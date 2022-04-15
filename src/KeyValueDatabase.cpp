@@ -74,21 +74,29 @@ public:
 	{
 		bool ret = false;
 
-		if ( mIterator && mIterator->Valid() )
+		if ( mIterator )
 		{
-			key = mIterator->key().ToString();
-			value = mIterator->value().ToString();
-			ret = true;
-			mIterator->Next();
-			if ( mIterator->Valid() && mPrefix.size() )
+			if ( mIterator->Valid() )
 			{
-				std::string skey = mIterator->key().ToString();
-				if ( !strncmp(mPrefix.c_str(),skey.c_str(),mPrefix.size()) == 0 )
+				key		= mIterator->key().ToString();
+				value	= mIterator->value().ToString();
+				ret		= true;
+				mIterator->Next();
+				if ( mPrefix.size() )
 				{
-					delete mIterator;
-					mIterator = nullptr;
-					ret = false;
+					if ( !strncmp(mPrefix.c_str(),key.c_str(),mPrefix.size()) == 0 )
+					{
+						delete mIterator;
+						mIterator = nullptr;
+						ret = false;
+					}
 				}
+			}
+			else
+			{
+				delete mIterator;
+				mIterator = nullptr;
+				ret = false;
 			}
 		}
 

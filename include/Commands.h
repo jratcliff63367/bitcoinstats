@@ -15,7 +15,7 @@ enum class CommandType : uint32_t
 class Commands
 {
 public:
-	static Commands *create(void);
+	static Commands *create(uint32_t argc,const char **argv);
 
 	virtual bool processInput(const char *inputLine) = 0;
 

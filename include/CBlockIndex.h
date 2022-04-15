@@ -4,6 +4,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <time.h>
+#include <string>
 
 #ifdef _MSC_VER
 #pragma warning(push)
@@ -260,6 +261,18 @@ public:
 		time_t t(_t);
 		struct tm *gtm = gmtime(&t);
 		printf("%4d-%02d-%02d\n", gtm->tm_year + 1900, gtm->tm_mon + 1, gtm->tm_mday);
+	}
+
+	/**
+	* Returns the block time as YEAR-MONTH-DAY as and std::string
+	*/
+	std::string getBlockTime(void) const
+	{
+		time_t t(mTime);
+		struct tm *gtm = gmtime(&t);
+		char scratch[512];
+		snprintf(scratch,sizeof(scratch),"%4d-%02d-%02d", gtm->tm_year + 1900, gtm->tm_mon + 1, gtm->tm_mday);
+		return std::string(scratch);
 	}
 };
 

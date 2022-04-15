@@ -35,14 +35,21 @@ using CommandTypeMap = std::unordered_map< std::string, CommandType >;
 class CommandsImpl : public Commands
 {
 public:
-	CommandsImpl(void)
+	CommandsImpl(uint32_t argc,const char **argv)
 	{
+		if ( argc )
+		{
+			mDataDir = argv[0];
+			mIndexDir = mDataDir + "/blocks/index";
+			mBlocksDir = mDataDir + "/blocks";
+		}
+
 		mCommands["help"] = CommandType::help;
 		mCommands["bye"] = CommandType::bye;
 
 		printf("Enter a command. Type 'help' for help. Type 'bye' to exit.\n");
 
-		mBlocks = blocks::Blocks::create("d:\\bitcoin-data\\blocks\\index");
+		mBlocks = blocks::Blocks::create(mIndexDir.c_str());
 
 	}
 
@@ -116,11 +123,14 @@ public:
 	bool			mExit{false};
 	CommandTypeMap mCommands;
 	blocks::Blocks	*mBlocks{nullptr};
+	std::string		mDataDir;
+	std::string		mIndexDir;
+	std::string		mBlocksDir;
 };
 
-Commands *Commands::create(void)
+Commands *Commands::create(uint32_t argc,const char **argv)
 {
-	auto ret = new CommandsImpl;
+	auto ret = new CommandsImpl(argc,argv);
 	return static_cast< Commands *>(ret);
 }
 
