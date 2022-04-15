@@ -17,7 +17,7 @@
 * when it writes to the levelDB is *NOT* the same variable length format used by 
 * the rest of the bitcoin blockchain. Moreover, the encoding is *NOT STANDARD*!
 * It appears to be some custom routine rolled just for the bitcoin source code.
-* So you mush take a look at the 'readVarint128' method closely to see how
+* So you must take a look at the 'readVarint128' method closely to see how
 * these integers are decoded.
 * 
 * This is to serve as a more complete answer to the question previously
