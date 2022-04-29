@@ -323,6 +323,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\github\bitcoinstats\include\Base58.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\BitcoinAddress.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\BlockChain.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\CBlockIndex.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\CRC32.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\Commands.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\FileInterface.h" />
@@ -331,8 +332,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\github\bitcoinstats\include\InParser.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\InputLine.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\KeyValueDatabase.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\ParseBlock.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\RIPEMD160.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\SHA256.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\ScopedTime.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\StandardDeviation.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\WakeupThread.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\blocks.h" />
@@ -392,6 +395,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="D:\github\bitcoinstats\include\snappy\snappy-stubs-public.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\snappy\snappy.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\sutil.h" />
+    <ClInclude Include="D:\github\bitcoinstats\include\varint.h" />
     <ClInclude Include="D:\github\bitcoinstats\include\wplatform.h" />
     <ClCompile Include="D:\github\bitcoinstats\src\Base58.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\BitcoinAddress.cpp" />
@@ -401,6 +405,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\github\bitcoinstats\src\InParser.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\InputLine.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\KeyValueDatabase.cpp" />
+    <ClCompile Include="D:\github\bitcoinstats\src\ParseBlock.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\RIPEMD160.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\SHA256.cpp" />
     <ClCompile Include="D:\github\bitcoinstats\src\WakupThread.cpp" />

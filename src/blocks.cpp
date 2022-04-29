@@ -30,6 +30,7 @@ public:
 
 using BlockIndexMap = std::unordered_map< uint32_t, CBlockIndex >;
 using BlockDayMap = std::map< std::string, BlockDay >;
+using DayIndexMap = std::unordered_map< uint32_t, std::string >; // maps a day index into the corresponding string
 
 class BlocksImpl : public Blocks
 {
@@ -66,6 +67,10 @@ public:
 					{
 						uint32_t blockHeight = uint32_t(cb.mBlockHeight);
 						mBlocks[blockHeight] = cb;
+						if ( blockHeight > mBlockHeight )
+						{
+							mBlockHeight = blockHeight;
+						}
 						if ( firstBlock )
 						{
 							blockLow = blockHeight;
@@ -133,6 +138,7 @@ public:
 			for (auto &i:mDays)
 			{
 				i.second.mDayNumber = mDayCount;
+				mDayIndex[mDayCount] = i.first;
 				mDayCount++;
 			}
 			printf("%d Blocks span a total of %d days.\n",uint32_t(mBlocks.size()),  mDayCount);
@@ -192,10 +198,52 @@ public:
 		return ret;
 	}
 
+		// Return the total number of days on the blockchain
+	virtual uint32_t getDayCount(void) const final
+	{
+		return mDayCount;
+	}
+
+	// Return the ASCII description for this day
+	virtual const char *getDay(uint32_t dayIndex) const final
+	{
+		const char *ret = nullptr;
+
+		DayIndexMap::const_iterator found = mDayIndex.find(dayIndex);
+		if ( found != mDayIndex.end() )
+		{
+			ret = (*found).second.c_str();
+		}
+
+		return ret;
+	}
+
+	virtual uint32_t getBlockHeight(void) const final
+	{
+		return mBlockHeight;
+	}
+
+	// Return the CBlockIndex structure for this block
+	virtual const CBlockIndex *getBlockIndex(uint32_t blockHeight) const final
+	{
+		const CBlockIndex *ret = nullptr;
+
+		BlockIndexMap::const_iterator found = mBlocks.find(blockHeight);
+		if ( found != mBlocks.end() )
+		{
+			ret = &(*found).second;
+		}
+
+		return ret;
+	}
+
+
 private:
 	uint32_t		mDayCount{0}; // total number of days covered by the blockchain
+	uint32_t		mBlockHeight{0};
 	BlockIndexMap	mBlocks;
 	BlockDayMap		mDays;
+	DayIndexMap		mDayIndex;
 };
 
 Blocks *Blocks::create(const char *levelDBDir)

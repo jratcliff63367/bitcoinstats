@@ -4,6 +4,8 @@
 #include "StandardDeviation.h"
 #include "rand.h"
 #include "Blocks.h"
+#include "ParseBlock.h"
+#include "CBlockIndex.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -46,6 +48,7 @@ public:
 
 		mCommands["help"] = CommandType::help;
 		mCommands["bye"] = CommandType::bye;
+		mCommands["block"] = CommandType::block;
 
 		printf("Enter a command. Type 'help' for help. Type 'bye' to exit.\n");
 
@@ -88,7 +91,36 @@ public:
 					ret = true;
 					break;
 				case CommandType::help:
-					printf("There is no help for you.\n");
+					printf("bye        : Exit application\n");
+					printf("block <n>  : Parse bitcoin block at this block height\n");
+					break;
+				case CommandType::block:
+					if ( argc >= 2 )
+					{
+						int block = atoi(argv[1]);
+						if (block >= 0 && block < (int)mBlocks->getBlockHeight() )
+						{
+							const CBlockIndex *cbi = mBlocks->getBlockIndex(block);
+							if ( cbi )
+							{
+								parseblock::ParseBlock *pb = parseblock::ParseBlock::create();
+								pb->parseBlock(*cbi,mBlocksDir.c_str());
+								pb->release();
+							}
+							else
+							{
+								printf("Failed to find block height:%s\n", argv[1]);
+							}
+						}
+						else
+						{
+							printf("Invalid block height:%s\n", argv[1]);
+						}
+					}
+					else
+					{
+						printf("Usage: block <blockNumber>\n");
+					}
 					break;
 				case CommandType::last:
 					printf("Unknown command: %s\n", argv[0]);

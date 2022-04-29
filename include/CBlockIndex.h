@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string>
+#include <assert.h>
 
 #ifdef _MSC_VER
 #pragma warning(push)

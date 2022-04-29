@@ -9,6 +9,7 @@ enum class CommandType : uint32_t
 {
 	help,
 	bye,
+	block,
 	last
 };
 
